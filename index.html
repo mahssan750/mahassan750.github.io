@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Hassan Aboulabed | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb; /* BI Blue */
+            --primary-dark: #1d4ed8;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        header h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        .contact-info i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+
+        /* Main Grid Structure */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card Sections */
+        section {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        section h3 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h3 i {
+            color: var(--primary);
+        }
+
+        /* Summary Statement */
+        .summary-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+
+        /* Projects Layout */
+        .project-card {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .project-link:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .project-list {
+            list-style-type: none;
+        }
+
+        .project-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .project-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Skills Layout */
+        .skills-group {
+            margin-bottom: 20px;
+        }
+
+        .skills-group h4 {
+            font-size: 0.95rem;
+            color: #0f172a;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Education & Learning */
+        .edu-item {
+            margin-bottom: 15px;
+        }
+
+        .edu-title {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .edu-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Mohamed Hassan Aboulabed</h1>
+            <h2>Data Analyst | Business Intelligence Specialist</h2>
+            
+            <div class="contact-info">
+                <span><i class="fa-solid fa-location-dot"></i> Sharjah, UAE</span>
+                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:mahassan750@gmail.com">mahassan750@gmail.com</a></span>
+                <span><i class="fa-solid fa-phone"></i> <a href="tel:0545388193">0545388193</a></span>
+                <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com" target="_blank">LinkedIn</a></span>
+                <span><i class="fa-brands fa-github"></i> <a href="https://github.com/mahssan750" target="_blank">GitHub</a></span>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            
+            <div class="left-column">
+                
+                <section id="about">
+                    <h3><i class="fa-solid fa-user"></i> Summary</h3>
+                    <p class="summary-text">Business Intelligence Specialist with strong expertise in SQL, Power BI, and data modeling, experienced in building end-to-end data pipelines and transforming large-scale datasets into actionable business insights.</p>
+                    <p class="summary-text">Skilled in ETL processes, dashboard development, and data visualization to support data-driven decision-making.</p>
+                    <p class="summary-text">Combines analytical thinking with retail domain experience to deliver impactful business intelligence solutions.</p>
+                </section>
+
+                <section id="projects">
+                    <h3><i class="fa-solid fa-diagram-project"></i> Projects</h3>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">End-to-End Data Warehouse & Analytical Pipeline</div>
+                            <a href="https://github.com/mahssan750/Online_retail" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                        <ul class="project-list">
+                            <li>Designed and implemented a Medallion Architecture (Bronze-Silver-Gold) using SQL</li>
+                            <li>Built ETL pipelines to transform raw retail data into structured analytical models</li>
+                            <li>Improved data quality and consistency for downstream reporting</li>
+                            <li>Enabled efficient querying and analytics for business insights</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-title">Power BI Retail Analytics Dashboard</div>
+                            <a href="https://github.com/mahssan750/online_retail_dashboards" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Code</a>
+                        </div>
+                        <ul class="project-list">
+                            <li>Developed interactive Power BI dashboards from 500,000+ retail transactions</li>
+                            <li>Delivered insights on customer behavior, sales trends, and product performance</li>
+                            <li>Applied DAX and data modeling to create dynamic and scalable reports</li>
+                            <li>Enhanced decision-making through clear and actionable visualizations</li>
+                        </ul>
+                    </div>
+                </section>
+                
+            </div>
+
+            <div class="right-column">
+                
+                <section id="skills">
+                    <h3><i class="fa-solid fa-gears"></i> Technical Skills</h3>
+                    
+                    <div class="skills-group">
+                        <h4>BI & Visualization</h4>
+                        <div class="skills-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Data Modeling</span>
+                            <span class="tag">DAX</span>
+                            <span class="tag">Dashboard Development</span>
+                            <span class="tag">Reporting</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Analysis & Coding</h4>
+                        <div class="skills-tags">
+                            <span class="tag">SQL (Advanced)</span>
+                            <span class="tag">Window Functions</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">R (Statistical)</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Data Management</h4>
+                        <div class="skills-tags">
+                            <span class="tag">Relational Databases</span>
+                            <span class="tag">Medallion Architecture</span>
+                            <span class="tag">Star Schema</span>
+                            <span class="tag">ETL Processes</span>
+                            <span class="tag">Data Cleaning</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4>Tools & Tech</h4>
+                        <div class="skills-tags">
+                            <span class="tag">Excel (Advanced)</span>
+                            <span class="tag">Power Query</span>
+                            <span class="tag">Git & GitHub</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="education">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <div class="edu-item">
+                        <div class="edu-title">Bachelor's Degree in Science</div>
+                        <div class="edu-meta">Al-Azhar University (2020)</div>
+                    </div>
+                </section>
+
+                <section id="learning">
+                    <h3><i class="fa-solid fa-book-open"></i> Continuous Learning</h3>
+                    <ul class="project-list">
+                        <li>Advanced SQL & Performance Optimization</li>
+                        <li>Power BI Advanced DAX & Data Modeling</li>
+                        <li>Python for Data Analysis (Pandas, NumPy)</li>
+                        <li>Web Fundamentals (HTML, CSS, JavaScript)</li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Mohamed Hassan Aboulabed. Built with HTML & CSS.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
