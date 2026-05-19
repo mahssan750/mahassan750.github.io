@@ -6,7 +6,7 @@
     <title>Mohamed Hassan Aboulabed | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     
     <style>
         :root {
@@ -362,7 +362,7 @@
                 
                 <section id="skills">
                     <h3><i class="fa-solid fa-gears"></i> Technical Skills</h3>
-                    <canvas id="skillsChart" width="400" height="200"></canvas>
+                  
                     <div class="skills-group">
                         <h4>BI & Visualization</h4>
                         <div class="skills-tags">
@@ -467,26 +467,6 @@ document.querySelectorAll('section, .project-card').forEach((el) => {
     el.classList.add('reveal');
     observer.observe(el);
 });
-        const ctx = document.getElementById('skillsChart').getContext('2d');
-   new Chart(ctx, {
-       type: 'bar', // or 'radar'
-       data: {
-           labels: ['SQL', 'Power BI', 'Python', 'Data Modeling', 'Excel'],
-           datasets: [{
-               label: 'Skill Proficiency (%)',
-               data: [90, 85, 75, 85, 90],
-               backgroundColor: '#2563eb',
-               borderColor: '#1d4ed8',
-               borderWidth: 1
-           }]
-       },
-       options: {
-           responsive: true,
-           scales: {
-               y: { beginAtZero: true, max: 100 }
-           }
-       }
-   });
     </script>
 </body>
 </html>
